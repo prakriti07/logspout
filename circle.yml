@@ -14,6 +14,8 @@ jobs:
       - run: |
           make build
       - run: |
+          docker run --rm --privileged multiarch/qemu-user-static:register
+      - run: |
           make build-arm
       - run: |
           make build-custom
