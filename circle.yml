@@ -14,7 +14,7 @@ jobs:
       - run: |
           make build
       - run: |
-          docker run --rm --privileged multiarch/qemu-user-static:register
+          docker run -it --rm --privileged multiarch/qemu-user-static --reset --credential yes --persistent yes
       - run: |
           make build-arm
       - run: |
